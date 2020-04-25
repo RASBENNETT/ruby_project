@@ -22,6 +22,13 @@ class Driver
         @id = result.first['id'].to_i
     end
 
+    def team()
+      sql = "SELECT * FROM teams
+      WHERE id = $1;"
+      values = [@team_id]
+      team = SqlRunner.run(sql, values)
+      return Team.new(team.first)
+    end
 
     ### CLASS METHODS  ###
 

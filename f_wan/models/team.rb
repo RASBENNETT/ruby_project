@@ -20,6 +20,13 @@ class Team
         @id = result.first['id'].to_i
     end
 
+    def drivers()
+        sql = "SELECT * FROM drivers
+        WHERE team_id = $1"
+        values = [@id]
+        drivers = SqlRunner.run( sql, values )
+        return drivers.map{ |driver| Driver.new(driver) }
+    end
 
     ### CLASS METHODS  ###
 
