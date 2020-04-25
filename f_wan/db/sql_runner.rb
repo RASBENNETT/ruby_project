@@ -2,9 +2,9 @@ require('pg')
 
 class SqlRunner
 
-    def initialize( sql, values = [] )
+    def self.run( sql, values = [] )
         begin
-            db = PG.connect( 'database' => 'f_wan', 'host' => 'localhost')
+            db = PG.connect({ dbname: 'f_wan', host: 'localhost' })
             db.prepare("query", sql)
             result = db.exec_prepared( "query", values )
         ensure

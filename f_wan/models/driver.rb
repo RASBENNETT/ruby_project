@@ -11,8 +11,16 @@ class Driver
         @last_name = options['last_name']
     end
 
-    def new()
-        
+    def save()
+        sql = "INSERT INTO drivers
+            ( first_name, last_name )
+            VALUES ($1, $2)
+            RETURNING id;"
+        values = [@first_name, @last_name]
+        result = SqlRunner.run(sql, values)
+        @id = result.first['id'].to_i
     end
+
+    
 
 end
