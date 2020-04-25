@@ -15,7 +15,7 @@ race3.save()
 race4.save()
 race5.save()
 
-# lewis = race.find('1')
+
 
 binding.pry
 nil

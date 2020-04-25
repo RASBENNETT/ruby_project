@@ -9,14 +9,15 @@ class Driver
         @id = options['id'].to_i if options['id']
         @first_name = options['first_name']
         @last_name = options['last_name']
+        @team_id = options['team_id']
     end
 
     def save()
         sql = "INSERT INTO drivers
-            ( first_name, last_name )
-            VALUES ($1, $2)
+            ( first_name, last_name, team_id)
+            VALUES ($1, $2, $3)
             RETURNING id;"
-        values = [@first_name, @last_name]
+        values = [@first_name, @last_name, @team_id]
         result = SqlRunner.run(sql, values)
         @id = result.first['id'].to_i
     end

@@ -1,14 +1,10 @@
 DROP TABLE IF EXISTS results ;
-DROP TABLE IF EXISTS teams ;
 DROP TABLE IF EXISTS drivers ;
+DROP TABLE IF EXISTS teams ;
 DROP TABLE IF EXISTS races ;
 
 
-CREATE TABLE drivers (
-    id SERIAL PRIMARY KEY,
-    first_name VARCHAR(255),
-    last_name VARCHAR(255)
-);
+
 
 CREATE TABLE races (
     id SERIAL PRIMARY KEY,
@@ -18,8 +14,14 @@ CREATE TABLE races (
 
 CREATE TABLE teams (
     id SERIAL PRIMARY KEY,
-    name VARCHAR(255),
-    driver_id INT REFERENCES drivers(id) ON DELETE CASCADE
+    name VARCHAR(255)
+);
+
+CREATE TABLE drivers (
+    id SERIAL PRIMARY KEY,
+    first_name VARCHAR(255),
+    last_name VARCHAR(255),
+    team_id INT REFERENCES teams(id) ON DELETE CASCADE
 );
 
 CREATE TABLE results (
