@@ -1,4 +1,7 @@
 require_relative('../models/driver')
+require('pry')
+
+Driver.delete_all
 
 driver1 = Driver.new( 'first_name' => 'Lewis', 'last_name' => 'Hamilton')
 driver2 = Driver.new( 'first_name' => 'Valteri', 'last_name' => 'Bottas')
@@ -11,3 +14,8 @@ driver2.save()
 driver3.save()
 driver4.save()
 driver5.save()
+
+# lewis = Driver.find('1')
+
+binding.pry
+nil
