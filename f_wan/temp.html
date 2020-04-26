@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>F WAN</h1>
+    <h2>What if the 2020 season took place?</h2>
+
+</body>
+</html>
+
+<h1>Drivers</h1>
+
+<% @drivers.each do |driver| %>
+<div class="driver_container">
+    <p><a href="/drivers/:id"></a><%= "#{@driver.first_name} #{@driver.last_name}" %></p>
+    <p><%= @driver.team %></p>
+</div>
+<%end%>
