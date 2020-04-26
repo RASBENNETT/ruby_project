@@ -50,6 +50,4 @@ class Team
         SqlRunner.run( sql )
       end
 
-
-
 end

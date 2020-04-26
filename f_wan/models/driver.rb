@@ -30,6 +30,16 @@ class Driver
       return Team.new(team.first)
     end
 
+    def results()
+      sql = "SELECT * FROM ((results 
+      INNER JOIN drivers ON results.driver_id = drivers.id)
+      INNER JOIN races ON results.race_id = races.id)
+      WHERE drivers.id = $1;"
+      values = [@id]
+      results = SqlRunner.run(sql, values)
+      return results.map{ |result| Result.new(result) }
+    end
+
     ### CLASS METHODS  ###
 
     def self.all()
@@ -50,6 +60,10 @@ class Driver
       def self.delete_all
         sql = "DELETE FROM drivers;"
         SqlRunner.run( sql )
+      end
+
+      def self.map_items( data )
+        return data.map{ |i| Driver.new(i)}
       end
 
 
