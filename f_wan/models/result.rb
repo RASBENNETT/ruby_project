@@ -22,6 +22,7 @@ class Result
         @id = result.first['id'].to_i
     end
 
+
     def self.all()
         sql = "SELECT * FROM results;"
         results = SqlRunner.run( sql )
@@ -41,8 +42,6 @@ class Result
         sql = "DELETE FROM results;"
         SqlRunner.run( sql )
       end
-
-
 
 
 end

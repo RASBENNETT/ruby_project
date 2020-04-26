@@ -34,7 +34,7 @@ class Driver
       sql = "SELECT * FROM ((results 
       INNER JOIN drivers ON results.driver_id = drivers.id)
       INNER JOIN races ON results.race_id = races.id)
-      WHERE drivers.id = $1;"
+      WHERE races.id = $1;"
       values = [@id]
       results = SqlRunner.run(sql, values)
       return results.map{ |result| Result.new(result) }

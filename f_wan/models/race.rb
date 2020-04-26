@@ -21,6 +21,20 @@ class Race
         @id = result.first['id'].to_i
     end
 
+    def result()
+      sql = "SELECT * FROM ((results 
+      INNER JOIN drivers ON results.driver_id = drivers.id)
+      INNER JOIN races ON results.race_id = races.id)
+      WHERE races.id = $1
+      ORDER BY position ASC;"
+      values = [@id]
+      results = SqlRunner.run(sql, values)
+      return results.map{ |result| Result.new(result) }
+    end
+
+    def winner()
+      return Driver.find(result().first.driver_id.to_i)
+    end
 
     ### CLASS METHODS  ###
 
