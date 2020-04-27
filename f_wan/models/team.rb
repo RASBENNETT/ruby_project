@@ -20,6 +20,22 @@ class Team
         @id = result.first['id'].to_i
     end
 
+    def update()
+      sql = "UPDATE teams
+      SET
+      name = $1 
+      WHERE id = $2"
+      values = [@name, @id]
+      SqlRunner.run(sql, values)
+    end
+
+    def delete()
+      sql = "DELETE FROM teams
+      WHERE id = $1"
+      values = [@id]
+      SqlRunner.run(sql, values)
+    end
+
     def drivers()
         sql = "SELECT * FROM drivers
         WHERE team_id = $1"
