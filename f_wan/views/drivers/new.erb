@@ -1,0 +1,16 @@
+<form method="post" action="/drivers">
+    <label for="first-name">First Name:</label>
+    <input id="first-name" type="text" name="first_name"/>
+
+    <label for="last-name">First Name:</label>
+    <input id="last-name" type="text" name="last_name"/>
+
+    <label for="team_select">Select Team:</label>
+    <select name="team_id" id="team_select">
+        <% @teams.each do |team|%>
+            <option value=<%= team.id %> ><%= team.name.capitalize %></option>
+        <% end %>
+    </select>
+  
+    <input type="submit" value="Add Driver">
+</form>

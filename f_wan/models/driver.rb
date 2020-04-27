@@ -2,7 +2,8 @@ require_relative('../db/sql_runner')
 
 class Driver
 
-    attr_reader :id, :first_name, :last_name
+    attr_reader :id
+    attr_accessor :first_name, :last_name, :team_id
 
 
     def initialize( options )
@@ -20,6 +21,23 @@ class Driver
         values = [@first_name, @last_name, @team_id]
         result = SqlRunner.run(sql, values)
         @id = result.first['id'].to_i
+    end
+
+    def update()
+      sql = "UPDATE drivers
+      SET
+      (first_name, last_name, team_id) 
+      = ( $1, $2, $3 )
+      WHERE id = $4"
+      values = [@first_name, @last_name, @team_id, @id]
+      SqlRunner.run(sql, values)
+    end
+
+    def delete()
+      sql = "DELETE FROM drivers
+      WHERE id = $1"
+      values = [@id]
+      SqlRunner.run(sql, values)
     end
 
     def team()
