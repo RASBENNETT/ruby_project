@@ -22,6 +22,9 @@ class Result
         @id = result.first['id'].to_i
     end
 
+    def driver()
+      return Driver.find(@driver_id)
+    end
 
     def self.all()
         sql = "SELECT * FROM results;"
