@@ -7,13 +7,15 @@ require_relative('../models/result')
 require_relative('../models/race')
 also_reload('../models/*')
 
-get '/teams' do
-    @teams = Team.all()
-    erb( :"teams/index" )
+get '/results' do
+    @races = Race.all()
+    @drivers = Driver.all()
+    @results = Result.all()
+    erb( :"results/index" )
 end
 
-get '/teams/:id' do
+get '/results/:id' do
     id = params['id'].to_i
-    @team = Team.find(id)
-    erb( :"teams/show" )
+    @race = Race.find(id)
+    erb( :"results/show" )
 end

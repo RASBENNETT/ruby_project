@@ -8,8 +8,8 @@ class Result
     def initialize( options )
         @id = options['id'] if options['id']
         @position = options['position']
-        @driver_id = options['driver_id']
-        @race_id = options['race_id']
+        @driver_id = options['driver_id'] if options['driver_id']
+        @race_id = options['race_id'] if options['race_id']
     end
 
     def save()

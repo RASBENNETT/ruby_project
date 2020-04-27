@@ -1,4 +1,5 @@
 require_relative('../db/sql_runner')
+require_relative('result')
 
 class Race
 
@@ -33,7 +34,8 @@ class Race
     end
 
     def winner()
-      return Driver.find(result().first.driver_id.to_i)
+      id = result().first.driver_id.to_i
+      return Driver.find(id)
     end
 
     ### CLASS METHODS  ###
