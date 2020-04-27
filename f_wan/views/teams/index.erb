@@ -1,0 +1,5 @@
+<% @teams.each do |team| %>
+    <div class="team_container">
+        <p><a href="/teams/<%= team.id %>"><%= team.name %></a></p>
+    </div>
+<%end%>

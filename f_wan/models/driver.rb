@@ -40,6 +40,10 @@ class Driver
       return results.map{ |result| Result.new(result) }
     end
 
+    def pretty_name()
+      return "#{@first_name} #{@last_name}"
+    end
+
     ### CLASS METHODS  ###
 
     def self.all()

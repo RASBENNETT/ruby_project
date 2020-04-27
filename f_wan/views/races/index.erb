@@ -1,0 +1,6 @@
+<% @races.each do |race| %>
+    <div class="race_container">
+        <p><a href="/races/<%= race.id %>"><%= race.location %></a></p>
+        <p><%= race.date %></p>
+    </div>
+<%end%>

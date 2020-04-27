@@ -10,3 +10,9 @@ get '/drivers' do
     erb( :"drivers/index" )
 end
 
+get '/drivers/:id' do
+    id = params['id'].to_i
+    @driver = Driver.find(id)
+    erb( :"drivers/show" )
+end
+
