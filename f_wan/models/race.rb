@@ -22,6 +22,23 @@ class Race
         @id = result.first['id'].to_i
     end
 
+    def update()
+      sql = "UPDATE races
+      SET
+      (location, date) 
+      = ( $1, $2 )
+      WHERE id = $3"
+      values = [@location, @date, @id]
+      SqlRunner.run(sql, values)
+    end
+
+    def delete()
+      sql = "DELETE FROM races
+      WHERE id = $1"
+      values = [@id]
+      SqlRunner.run(sql, values)
+    end
+
     def result()
       sql = "SELECT * FROM ((results 
       INNER JOIN drivers ON results.driver_id = drivers.id)
