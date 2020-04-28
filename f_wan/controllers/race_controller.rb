@@ -7,8 +7,6 @@ require_relative('../models/race')
 also_reload('../models/*')
 
 
-
-
 get '/races' do
     @races = Race.all()
     erb( :"races/index" )

@@ -1,6 +1,24 @@
-<form method="post" action="/teams/<%= @team.id %>">
-    <label for="name">Name:</label>
-    <input id="name" type="text" name="name"/>
+<form action="/results" method="post">
+  <label> RACE LOCATION: </label>
+    <select name="race_id">
+      <% @races.each do |race| %>
+        <option value="<%= race.id %>"><%= race.location %></option>
+      <% end %>
+    </select>
   
-    <input type="submit" value="Change Details">
+    <label for="date"> Date:</label>
+    <input id="date" type="text" name="date"/>
+
+    <label> RESULT </label>
+    <% @drivers.each do |driver| %>
+      <%= driver.pretty_name %>
+      <select name="position">
+        <%for i in 1..@drivers.length%>
+          <option value="<%= i %>"><%= i %></option>
+          <% end %>
+        </select>
+    <% end %>
+
+  <input type='submit' value="Confirm">
+  
 </form>

@@ -1,21 +1,17 @@
-<form action="/bitings" method="post">
-  <label>
-  Select a zombie:
-    <select name="zombie_id">
-      <% for zombie in @zombies %>
-      <option value="<%= zombie.id %>"><%= zombie.name %></option>
-      <% end %>
-    </select>
-  </label>
+<form action="/results/<%= @race.id %>" method="post">
   
-  <label>
-    Select a victim:
-    <select name="victim_id">
-      <% for victim in @victims %>
-      <option value="<%= victim.id %>"><%= victim.name %></option>
-      <% end %>
-    </select>
-  </label>
+    <label> RESULT </label>
+
+
+    <% @drivers.each do |driver| %>
+      <%= driver.pretty_name %>
+        <select name= <%= driver.id %> >
+          <%for i in 1..@drivers.length%>
+              <option value="<%= i %>"><%= i %></option>
+          <% end %>
+        </select>
+    <% end %>
+
+  <input type='submit' value="Confirm">
   
-  <input class="btn btn--action" type='submit' value="Bite!">
 </form>
