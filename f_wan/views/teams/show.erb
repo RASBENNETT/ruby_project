@@ -1,7 +1,7 @@
-
 <div class="team_container">
     <p><%= @team.name %></p>
     <% @team.drivers.each do |driver| %>
     <p><a href="/drivers/<%= driver.id %>">Driver : <%= driver.pretty_name %></a></p>
     <%end%>
+</div>
 </div>

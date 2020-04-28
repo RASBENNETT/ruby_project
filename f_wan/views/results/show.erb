@@ -3,7 +3,7 @@
 <% end %>
 
 <% @race.result.each do |result| %>
-<div class="result_container">
-    <p><%= result.position%> <%= result.driver.pretty_name %></p>
-</div>
+    <div class="result_container">
+        <p><%= result.position%> <%= result.driver.pretty_name %></p>
+    </div>
 <%end%>

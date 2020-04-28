@@ -1,24 +1,23 @@
-/* body {
-    background-color: red;
-} */
+body {
+    background-color: white;
+}
 
 /* FRONT PAGE */
 
-
-/* .title {
-    color: white;
+.title {
     text-align: center;
     font-size: 40px;
+    color: red;
 }
 
 .title a{
     text-decoration: none;
-    color: white;
+    color: red;
 }
 
 .sub_title {
     font-size: 25px;
-    color: white;
+    color: red;
 }
 
 .nav_bar {
@@ -33,13 +32,41 @@
 .nav_bar a{
     text-decoration: none;
     font-size: 30px;
-    color: white;
-    border: ivory;
-    border-width: 3px;
-    padding: 2vw;
+    color: blue;
 }
 
 .nav_bar a:hover {
     border-color: darkred;
     color: black;
-} */
+}
+
+.list_container{
+    display: grid;
+    grid-template-columns: auto auto;
+    column-gap: 5vw;
+    row-gap: 5vw;
+    width: 80vw;
+    margin: auto;
+}
+
+.driver_container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: darkred;
+    font-size: 25px;
+    height: 35vh;
+    color: white;
+    background-size: 100%;
+    border: 2px solid red;
+    border-radius: 20px;
+}
+
+.driver_container:hover{
+    background-color: black;
+}
+
+.list_container a {
+    text-decoration: none;
+}
