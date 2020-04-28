@@ -1,4 +1,6 @@
-<h3><a href="/results/<%= @race.id %>/new ">Add Result</a></h3>
+<% if @race.result.length == 0 %>
+    <h3><a href="/results/<%= @race.id %>/new ">Add Result</a></h3>
+<% end %>
 
 <% @race.result.each do |result| %>
 <div class="result_container">
