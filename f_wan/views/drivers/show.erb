@@ -7,4 +7,22 @@
         <p>Nationality : <%= @driver.nationality %></p>
         <p>Age : <%= @driver.age %></p>
     </div>
+    
 </div>
+
+<h2 class="driver_results_title">RACE RESULTS<h2>
+
+<div class="driver_results_container">
+    <div class="driver_result">
+        <p><u>Race </u></p>
+        <p><u>Position</u></p>
+        <p><u>Points</u> </p>
+    </div>
+        <% @driver.results.each do |result| %>
+            <div class="driver_result_info">
+            <p><%= result.race.location %></p>
+            <p><%= result.position %></p>
+            <p><%= result.points %></p>
+            </div>
+        <%end%>
+    </div>

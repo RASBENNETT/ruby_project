@@ -1,9 +1,22 @@
 <% if @race.result.length == 0 %>
-    <h3><a href="/results/<%= @race.id %>/new ">Add Result</a></h3>
+    <a href="/results/<%= @race.id %>/new ">
+        <div class="add_result">
+            Add Result
+        </div>
+    </a>
 <% end %>
 
-<% @race.result.each do |result| %>
-    <div class="result_container">
-        <p><%= result.position%> <%= result.driver.pretty_name %></p>
+<div class="result_table">
+    <div class="result">
+        <p><u>Position </u></p>
+        <p><u>Name</u></p>
+        <p><u>Points</u> </p>
     </div>
-<%end%>
+    <% @results.each do |result| %>
+        <div class="result">
+            <p><%= result.position%> </p>
+            <p><%= result.driver.pretty_name %></p>
+            <p><%= result.points%> </p>
+        </div>
+    <%end%>
+</div>

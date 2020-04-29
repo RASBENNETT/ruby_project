@@ -1,15 +1,17 @@
 require_relative('../db/sql_runner')
+require_relative('points')
 
 class Result
 
     attr_reader :id
-    attr_accessor :position, :driver_id, :race_id
+    attr_accessor :position, :driver_id, :race_id, :points
 
     def initialize( options )
         @id = options['id'] if options['id']
         @position = options['position']
         @driver_id = options['driver_id'] if options['driver_id']
         @race_id = options['race_id'] if options['race_id']
+        @points = 0
     end
 
     def save()
@@ -24,6 +26,18 @@ class Result
 
     def driver()
       return Driver.find(@driver_id)
+    end
+
+    def race()
+      return Race.find(@race_id)
+    end
+
+    
+
+    def points()
+      point = Points.new()
+      @points += point.selector[@position.to_s] if point.selector[@position.to_s]
+      @points += 0
     end
 
     def self.all()

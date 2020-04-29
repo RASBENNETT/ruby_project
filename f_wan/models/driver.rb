@@ -1,10 +1,11 @@
 require_relative('../db/sql_runner')
+require_relative('points')
+
 
 class Driver
 
     attr_reader :id
-    attr_accessor :first_name, :last_name, :team_id, :nationality, :age
-
+    attr_accessor :first_name, :last_name, :team_id, :nationality, :age, :points
 
     def initialize( options )
         @id = options['id'].to_i if options['id']
@@ -58,6 +59,10 @@ class Driver
       values = [@id]
       results = SqlRunner.run(sql, values)
       return results.map{ |result| Result.new(result) }
+    end
+
+    def points()
+      return results().sum{ |result| result.points }
     end
 
     def pretty_name()

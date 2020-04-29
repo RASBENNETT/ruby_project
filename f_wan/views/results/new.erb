@@ -1,17 +1,22 @@
 <form action="/results/<%= @race.id %>" method="post">
   
-    <label> RESULT </label>
+<div class="title page_title">
+    <label> NEW RESULT </label>
+</div>
 
-
+<div class="result_new_container">
     <% @drivers.each do |driver| %>
-      <%= driver.pretty_name %>
-        <select name= <%= driver.id %> >
-          <%for i in 1..@drivers.length%>
-              <option value="<%= i %>"><%= i %></option>
-          <% end %>
-        </select>
+      <div class="result_select">
+        <%= driver.pretty_name %>
+          <select class="select" name= <%= driver.id %> >
+            <%for i in 1..@drivers.length%>
+                <option value="<%= i %>"><%= i %></option>
+            <% end %>
+          </select>
+        </div>
     <% end %>
+  </div>
 
-  <input type='submit' value="Confirm">
+  <input class="add_result" type='submit' value="Confirm">
   
 </form>

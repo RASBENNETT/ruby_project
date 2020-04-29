@@ -42,3 +42,92 @@
     background-color: #0082FA;
     border-color:  #0082FA;
 } 
+
+
+.australia_colour{
+    background: linear-gradient(90deg, rgba(0,168,21,1) 0%, rgba(224,224,65,1) 100%);
+}
+
+.bahrain_colour{
+    background: linear-gradient(90deg, rgba(255,255,255,1) 0%, rgba(176,0,0,1) 100%);
+}
+
+.vietnam_colour{
+    background: radial-gradient(circle, rgba(239,255,0,1) 0%, rgba(208,0,0,1) 50%);
+}
+
+.china_colour{
+    background: red;
+}
+
+.netherlands_colour{
+    background-color: #FF900B;
+}
+
+.spain_colour{
+    background: linear-gradient(90deg, rgba(255,0,0,1) 0%, rgba(245,255,60,1) 70%);
+}
+
+.monaco_colour{
+    background: linear-gradient(180deg, rgba(255,0,0,1) 0%, rgba(255,255,255,1) 70%);
+}
+
+.azerbaijan_colour{
+    background: linear-gradient(90deg, rgba(13,140,18,1) 16%, rgba(255,0,0,1) 50%, rgba(64,171,237,1) 85%);
+}
+
+.canada_colour{
+    background: linear-gradient(90deg, rgba(255,19,19,1) 35%, rgba(246,246,246,1) 50%, rgba(237,64,64,1) 65%);
+}
+
+.france_colour{
+    background: linear-gradient(90deg, rgba(19,89,255,1) 30%, rgba(246,246,246,1) 40%, rgba(255,255,255,1) 57%, rgba(255,21,21,1) 72%);
+}
+
+.austria_colour{
+    background: linear-gradient(90deg, rgba(255,19,19,1) 0%, rgba(255,255,255,1) 50%, rgba(255,21,21,1) 100%);
+}
+
+
+
+.unitedkingdom_colour{
+    background: radial-gradient(circle, rgba(255,19,19,1) 0%, rgba(255,255,255,1) 28%, rgba(242,242,242,1) 50%, rgba(255,46,46,1) 64%, rgba(21,67,255,1) 100%);
+}
+
+.hungary_colour{
+    background: radial-gradient(circle, rgba(0,144,23,1) 0%, rgba(255,255,255,1) 50%, rgba(193,0,0,1) 100%);
+}
+
+.belgium_colour{
+    background: linear-gradient(90deg, rgba(0,0,0,1) 0%, rgba(255,250,0,1) 50%, rgba(193,0,0,1) 100%);
+}
+
+
+.italy_colour{
+    background: linear-gradient(90deg, rgba(6,138,0,1) 0%, rgba(255,255,255,1) 50%, rgba(193,0,0,1) 100%);
+}
+
+.singapore_colour{
+    background: linear-gradient(90deg, rgba(255,255,255,1) 0%, rgba(193,0,0,1) 100%);
+}
+
+.russia_colour{
+    background: linear-gradient(90deg, rgba(255,255,255,1) 0%, rgba(9,17,193,1) 49%, rgba(193,0,0,1) 100%);
+}
+.japan_colour{
+    background: radial-gradient(circle, rgba(255,0,0,1) 0%, rgba(255,255,255,1) 30%);
+}
+.unitedstates_colour{
+    background: linear-gradient(90deg, rgba(31,0,255,1) 0%, rgba(255,255,255,1) 29%, 
+    rgba(255,0,0,1) 42%, rgba(255,255,255,1) 54%, 
+    rgba(255,0,0,1) 69%, rgba(255,255,255,1) 87%, rgba(255,0,0,1) 100%);
+}
+.mexico_colour{
+    background: linear-gradient(90deg, rgba(255,0,0,1) 0%, rgba(255,255,255,1) 46%, rgba(5,110,0,1) 100%);
+}
+.brazil_colour{
+    background: radial-gradient(circle, rgba(0,33,255,1) 0%, rgba(255,250,0,1) 46%, rgba(5,110,0,1) 100%);
+}
+.abudhabi_colour{
+    background: linear-gradient(90deg, rgba(189,1,1,1) 0%, rgba(52,164,0,1) 24%, rgba(255,255,255,1) 62%, rgba(0,0,0,1) 100%);
+}

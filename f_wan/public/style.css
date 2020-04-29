@@ -149,6 +149,38 @@ footer{
     background-repeat: no-repeat;
 }
 
+.driver_results_container{
+    display: grid;
+    grid-template-columns: auto;
+    align-items: center;
+    width: 80vw;
+    margin: auto;
+    font-size: 30px;
+
+}
+
+.driver_results_title{
+    font-size: 35px;
+    text-align: center;
+    text-decoration: underline;
+    margin-bottom: 5rem;
+}
+
+.driver_result{
+    display: grid;
+    grid-template-columns: 45% 10% 45%;
+    align-items: center;
+    justify-items: center; 
+    row-gap: 5rem;
+    
+}
+
+.driver_result_info{
+    display: grid;
+    grid-template-columns: 45% 10% 45%;
+    align-items: center;
+    justify-items: center; 
+}
 
 
 /* RACES */
@@ -169,8 +201,7 @@ footer{
     font-size: 25px;
     height: 8vh;
     width: 100%;
-    color: #E72929;
-    background-color: black;
+    color: black;
     background-size: 100%;
     border: 3px solid black;
     border-radius: 0px 50px 0px 0px;
@@ -277,10 +308,64 @@ footer{
     font-size: 25px;
     height: 10vh;
     width: 100%;
-    color: #E72929;
+    color: black;
     background-size: 100%;
-    background-color: black;
     border: 3px solid black;
     border-radius: 10px 50px 20px 25px;
 }
 
+
+/* RESULT */
+
+.result_table{
+    display: grid;
+    grid-template-columns: auto;
+    font-size: 30px;
+    row-gap: 2rem;
+    width: 80vw;
+    margin: auto;
+    margin-top: 4rem;
+}
+
+.result{
+    display: grid;
+    grid-template-columns: auto auto auto;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.add_result{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: auto;
+    font-size: 40px;
+    width: 25vw;
+    height: 15vh;
+    background-color: #E72929;
+    border-radius: 10px 50px 20px 25px;
+}
+
+.result_new_container{
+    display: grid;
+    grid-template-columns: auto;
+    margin: auto;
+    width: 50vw;
+    row-gap: 2rem;
+    margin-bottom: 5rem;
+}
+
+.result_select{
+    display: grid;
+    grid-template-columns: auto auto;
+    align-items: center;
+    justify-content: space-between;
+    font-size: 30px;
+}
+
+.select{
+    width: 5vw;
+    height: 3vw;
+    font-size: 30px;
+    text-align: center;
+}

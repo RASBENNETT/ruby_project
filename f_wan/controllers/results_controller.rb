@@ -25,6 +25,7 @@ end
 get '/results/:id' do
     id = params['id'].to_i
     @race = Race.find(id)
+    @results = @race.result()
     erb( :"results/show" )
 end
 

@@ -3,7 +3,7 @@
 <div class="result_container">
     <% @races.each do |race| %>
             <a href="/results/<%= race.id %>">
-                <div class="result_item" >
+                <div class="result_item <%= race.location.downcase.delete(' ')%>_colour"" >
                     <p><%= race.location %></p>
                     <% if race.result.first %>
                     <p>Winner : <%= race.winner.pretty_name %></p>
