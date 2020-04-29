@@ -1,7 +1,10 @@
-
-<div class="driver_container">
-    <p><%= @driver.pretty_name %></p>
-    <p><a href="/teams/<%= @driver.team.id %>">Team : <%= @driver.team.name %></a></p>
-    <p>Nationality : <%= @driver.nationality %></p>
-    <p>Age : <%= @driver.age %></p>
+<div class="driver">
+    <div class="driver_img" style=background-image:url(/headshots/<%= "#{@driver.first_name.downcase}_headshot.jpg" %>)>
+    </div>
+    <div class="driver_info <%= @driver.team.name.downcase.delete(' ')%>_colour">
+        <p><%= @driver.first_name %> <b style="font-size: 45px;"><%= @driver.last_name %></b></p>
+        <p><a href="/teams/<%= @driver.team.id %>">Team : <%= @driver.team.name %></a></p>
+        <p>Nationality : <%= @driver.nationality %></p>
+        <p>Age : <%= @driver.age %></p>
+    </div>
 </div>

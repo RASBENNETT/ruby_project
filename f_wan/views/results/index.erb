@@ -1,10 +1,14 @@
+<h1 class="title page_title">RESULTS</h1>
 
-
-<% @races.each do |race| %>
-    <div class="result_container">
-        <p><a href="/results/<%= race.id %>"><%= race.location %></a></p>
-        <p>Winner : <%= race.winner.pretty_name if race.result.first %></p>
-        <p><%=  %></p>
-    </div>
-<%end%>
-
+<div class="result_container">
+    <% @races.each do |race| %>
+            <a href="/results/<%= race.id %>">
+                <div class="result_item" >
+                    <p><%= race.location %></p>
+                    <% if race.result.first %>
+                    <p>Winner : <%= race.winner.pretty_name %></p>
+                    <% end %>
+                </div>
+            </a>
+    <%end%>
+</div>

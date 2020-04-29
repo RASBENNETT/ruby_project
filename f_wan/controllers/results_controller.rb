@@ -37,7 +37,6 @@ post '/results/:id' do
         info['driver_id'] = key.to_i
         info['position'] = value.to_i
         info['race_id'] = race.id
-        p info
         result = Result.new( info )
         result.save()
         end
