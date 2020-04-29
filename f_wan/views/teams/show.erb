@@ -2,7 +2,8 @@
 
     <div class="team">
         <div class="team_name <%= @team.name.downcase.delete(' ')%>_colour"><%= @team.name %></div>
-        
+        <div class="car_img" style=background-image:url(/cars/<%= "#{@team.name.downcase.delete(' ')}_car.jpg" %>)>
+    
     </div>
     
     <div class="team_name"><p> Drivers </p></div>
@@ -18,3 +19,4 @@
             </a>
         <%end%>
     </div>
+    
