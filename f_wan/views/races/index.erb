@@ -1,6 +1,16 @@
-<% @races.each do |race| %>
-    <div class="race_container">
-        <p><a href="/races/<%= race.id %>"><%= race.location %></a></p>
-        <p><%= race.date %></p>
-    </div>
-<%end%>
+<h1 class="title page_title">RACES</h1>
+
+<div class="race_container" >
+    <% @races.each do |race| %>
+        <div class="hov" >
+            <a href="/races/<%= race.id %>">
+                <div class="race_item">
+                    <p><%= race.location %></p>
+                    <p><%= race.circuit %></p>
+                    <p><%= race.date %></p>
+                </div>
+                <div class="race_img" style=background-image:url(/race_backgrounds/<%= "#{race.location.downcase.delete(' ')}_background.jpg" %>)></div>
+            </a>
+        </div>
+    <%end%>
+</div>

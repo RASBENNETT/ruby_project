@@ -4,20 +4,21 @@ require_relative('result')
 class Race
 
     attr_reader :id
-    attr_accessor :location, :date
+    attr_accessor :location, :date, :circuit
 
     def initialize( options )
         @id = options['id'] if options['id']
         @location = options['location']
         @date = options['date']
+        @circuit = options['circuit']
     end
 
     def save()
         sql = "INSERT INTO races
-            ( location, date )
-            VALUES ($1, $2)
+            ( location, date, circuit )
+            VALUES ($1, $2, $3)
             RETURNING id;"
-        values = [@location, @date]
+        values = [@location, @date, @circuit]
         result = SqlRunner.run(sql, values)
         @id = result.first['id'].to_i
     end
@@ -25,10 +26,10 @@ class Race
     def update()
       sql = "UPDATE races
       SET
-      (location, date) 
-      = ( $1, $2 )
-      WHERE id = $3"
-      values = [@location, @date, @id]
+      (location, date, circuit) 
+      = ( $1, $2, $3 )
+      WHERE id = $4"
+      values = [@location, @date, @circuit, @id]
       SqlRunner.run(sql, values)
     end
 

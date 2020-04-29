@@ -3,7 +3,7 @@ require_relative('../db/sql_runner')
 class Driver
 
     attr_reader :id
-    attr_accessor :first_name, :last_name, :team_id
+    attr_accessor :first_name, :last_name, :team_id, :nationality, :age
 
 
     def initialize( options )
@@ -11,14 +11,16 @@ class Driver
         @first_name = options['first_name']
         @last_name = options['last_name']
         @team_id = options['team_id']
+        @nationality = options['nationality']
+        @age = options['age']
     end
 
     def save()
         sql = "INSERT INTO drivers
-            ( first_name, last_name, team_id)
-            VALUES ($1, $2, $3)
+            ( first_name, last_name, team_id, nationality, age)
+            VALUES ($1, $2, $3, $4, $5)
             RETURNING id;"
-        values = [@first_name, @last_name, @team_id]
+        values = [@first_name, @last_name, @team_id, @nationality, @age]
         result = SqlRunner.run(sql, values)
         @id = result.first['id'].to_i
     end
@@ -26,10 +28,10 @@ class Driver
     def update()
       sql = "UPDATE drivers
       SET
-      (first_name, last_name, team_id) 
-      = ( $1, $2, $3 )
-      WHERE id = $4"
-      values = [@first_name, @last_name, @team_id, @id]
+      (first_name, last_name, team_id, nationality, age) 
+      = ( $1, $2, $3, $4, $5 )
+      WHERE id = $6"
+      values = [@first_name, @last_name, @team_id, @nationality, @age, @id]
       SqlRunner.run(sql, values)
     end
 

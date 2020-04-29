@@ -9,6 +9,7 @@ DROP TABLE IF EXISTS races ;
 CREATE TABLE races (
     id SERIAL PRIMARY KEY,
     location VARCHAR(255),
+    circuit VARCHAR(255),
     date VARCHAR(255)
 );
 
@@ -21,6 +22,8 @@ CREATE TABLE drivers (
     id SERIAL PRIMARY KEY,
     first_name VARCHAR(255),
     last_name VARCHAR(255),
+    nationality VARCHAR(255),
+    age INT,
     team_id INT REFERENCES teams(id) ON DELETE CASCADE
 );
 

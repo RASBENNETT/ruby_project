@@ -1,13 +1,16 @@
-<h1 class="title">Drivers</h1>
+<h1 class="title page_title">Drivers</h1>
 
 <div class="list_container" >
     <% @drivers.each do |driver| %>
-        <a href="/drivers/<%= driver.id %>">
-            <div class="driver_container" style=background-image:url(<%= "#{driver.first_name.downcase}_headshot.jpg" %>) >
-                <p><%= driver.pretty_name %></p>
-                <p><%= driver.team.name %></p>
-            </div>
-        </a>
+        <div class="hov" >
+            <a href="/drivers/<%= driver.id %>">
+                <div class="driver_container" >
+                    <p><%= driver.pretty_name %></p>
+                    <p><%= driver.team.name %></p>
+                </div>
+                <div class="driver_img" style=background-image:url(/headshots/<%= "#{driver.first_name.downcase}_headshot.jpg" %>) ></div>
+            </a>
+        </div>
     <%end%>
 </div>
 
