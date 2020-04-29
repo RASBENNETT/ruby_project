@@ -232,6 +232,35 @@ footer{
 
 }
 
+/* TEAM */
+
+.team{
+    display: grid;
+    grid-template-rows: auto auto;
+    width: 80vw;
+    margin: auto;
+    row-gap: 3rem;
+}
+
+.team_name{
+    font-size: 40px;
+    text-align: center;
+    width: 100%;
+    border-radius: 10px 50px 20px 25px;
+}
+
+.team_drivers{
+    display: grid;
+    grid-template-rows: auto auto;
+    grid-template-columns: auto auto;
+    grid-auto-flow: column;
+    align-items: center;
+    justify-items: center;
+    font-size: 40px;
+}
+
+
+
 
 .result_container{
     display: grid;
@@ -254,3 +283,4 @@ footer{
     border: 3px solid black;
     border-radius: 10px 50px 20px 25px;
 }
+

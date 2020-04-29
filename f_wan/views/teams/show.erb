@@ -1,7 +1,20 @@
-<div class="team_container">
-    <p><%= @team.name %></p>
-    <% @team.drivers.each do |driver| %>
-    <p><a href="/drivers/<%= driver.id %>">Driver : <%= driver.pretty_name %></a></p>
-    <%end%>
-</div>
-</div>
+
+
+    <div class="team">
+        <div class="team_name <%= @team.name.downcase.delete(' ')%>_colour"><%= @team.name %></div>
+        
+    </div>
+    
+    <div class="team_name"><p> Drivers </p></div>
+
+    <div class="team_drivers">
+        <% @team.drivers.each do |driver| %>
+            <a href="/drivers/<%= driver.id %>"> 
+                <div class="team_name"><%= driver.pretty_name %></div>
+            </a>
+            <a href="/drivers/<%= driver.id %>"> 
+                <div class="driver_img" style=background-image:url(/headshots/<%= "#{driver.first_name.downcase}_headshot.jpg" %>)>
+                </div>
+            </a>
+        <%end%>
+    </div>
